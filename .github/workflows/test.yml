@@ -17,12 +17,16 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Install dependencies
+        run: pnpm install
       - name: Use Node ${{ matrix.node }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
-      - name: Install dependencies
-        run: pnpm install
+          cache: 'pnpm'
       - name: Type check
         run: npm run typecheck
       - name: Test
