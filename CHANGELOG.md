@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/makotot/eslint-plugin-config-itself/compare/v1.0.2...v1.0.3) (2023-12-23)
+
+
+### Bug Fixes
+
+* re-export ([7830a34](https://github.com/makotot/eslint-plugin-config-itself/commit/7830a34ed31999b1ff45cf14f4f74a3a6f1668e9))
+
 ## [1.0.2](https://github.com/makotot/eslint-plugin-config-itself/compare/v1.0.1...v1.0.2) (2023-12-23)
 
 
