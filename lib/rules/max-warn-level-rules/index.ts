@@ -53,7 +53,8 @@ export const rule = createRule<Options, 'maxWarnLevelRules'>({
     { max: 0 }
   ],
   create(context, [{max}]) {
-    if (!['.eslintrc.js', '.eslintrc.cjs'].includes(getFilename(context))) {
+    const currentFileName = getFilename(context)
+    if (!['.eslintrc.js', '.eslintrc.cjs'].find((filename) => currentFileName.includes(filename))) {
       return {}
     }
 
