@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-config-itself",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "ESLint plugin for ESLint config itself",
   "type": "commonjs",
   "main": "./dist/index.js",

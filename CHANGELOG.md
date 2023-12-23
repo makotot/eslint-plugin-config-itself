@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/makotot/eslint-plugin-config-itself/compare/v1.0.1...v1.0.2) (2023-12-23)
+
+
+### Bug Fixes
+
+* use node16 ([9ae5552](https://github.com/makotot/eslint-plugin-config-itself/commit/9ae5552264fd9e325dcdd15116b16534d4da8a61))
+* use nodenext ([5d3ddf3](https://github.com/makotot/eslint-plugin-config-itself/commit/5d3ddf331640b130e03d1339568680487a0bed6a))
+
 ## [1.0.1](https://github.com/makotot/eslint-plugin-config-itself/compare/v1.0.0...v1.0.1) (2023-12-23)
 
 
