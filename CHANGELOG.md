@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/makotot/eslint-plugin-config-itself/compare/v1.0.3...v1.0.4) (2023-12-23)
+
+
+### Bug Fixes
+
+* check by partial match ([abccb65](https://github.com/makotot/eslint-plugin-config-itself/commit/abccb65ab94dd8752901a03ab1dda60916756631))
+
 ## [1.0.3](https://github.com/makotot/eslint-plugin-config-itself/compare/v1.0.2...v1.0.3) (2023-12-23)
 
 
