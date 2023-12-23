@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/makotot/eslint-plugin-config-itself/compare/v1.0.0...v1.0.1) (2023-12-23)
+
+
+### Bug Fixes
+
+* add prepack ([0069d89](https://github.com/makotot/eslint-plugin-config-itself/commit/0069d896f47091e7250ab85763a18f60d398a383))
+
 # 1.0.0 (2023-12-22)
 
 
