@@ -6,24 +6,24 @@ Example of incorrect code for this rule with `max: 0`:
 
 ```js
 module.exports = {
-  "plugins": ["config-itself"],
-  "rules": {
+  plugins: ["config-itself"],
+  rules: {
     "no-undef": "warn",
-    "config-itself/max-warn-level-rules": "error"
+    "config-itself/max-warn-level-rules": "error",
   },
-}
+};
 ```
 
 Examples of correct code for this rule:
 
 ```js
 module.exports = {
-  "plugins": ["config-itself"],
-  "rules": {
+  plugins: ["config-itself"],
+  rules: {
     "no-undef": "error",
-    "config-itself/max-warn-level-rules": "error"
+    "config-itself/max-warn-level-rules": "error",
   },
-}
+};
 ```
 
 ## Options
