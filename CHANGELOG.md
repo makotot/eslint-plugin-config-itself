@@ -1,3 +1,11 @@
+## [1.0.5](https://github.com/makotot/eslint-plugin-config-itself/compare/v1.0.4...v1.0.5) (2023-12-25)
+
+
+### Bug Fixes
+
+* format ([9b649b7](https://github.com/makotot/eslint-plugin-config-itself/commit/9b649b7a6d7826cfc5ccc85232f2f3a4c20c4d7f))
+* format ([133d972](https://github.com/makotot/eslint-plugin-config-itself/commit/133d972e92a9c092dc197877e39bc046cc5c6179))
+
 ## [1.0.4](https://github.com/makotot/eslint-plugin-config-itself/compare/v1.0.3...v1.0.4) (2023-12-23)
 
 
