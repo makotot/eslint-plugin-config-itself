@@ -1,5 +1,5 @@
-import { rule as maxWarnLevelRules } from "./max-warn-level-rules";
+import { rule as maxWarnLevelRules } from './max-warn-level-rules'
 
 export const rules: Record<string, unknown> = {
-  "max-warn-level-rules": maxWarnLevelRules,
-};
+  'max-warn-level-rules': maxWarnLevelRules,
+}

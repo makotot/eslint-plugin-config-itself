@@ -1,17 +1,13 @@
-import {
-  AST_NODE_TYPES,
-  ESLintUtils,
-  TSESTree,
-} from "@typescript-eslint/utils";
-import { getFilename } from "@typescript-eslint/utils/eslint-utils";
+import { AST_NODE_TYPES, ESLintUtils, TSESTree } from '@typescript-eslint/utils'
+import { getFilename } from '@typescript-eslint/utils/eslint-utils'
 
-export const name = "max-warn-level-rules";
+export const name = 'max-warn-level-rules'
 
 const createRule = ESLintUtils.RuleCreator(
-  (name: string) => "eslint-plugin-config-itself/" + name,
-);
+  (name: string) => 'eslint-plugin-config-itself/' + name,
+)
 
-type Options = [{ max: number }];
+type Options = [{ max: number }]
 
 function countWarnInRules(rules: TSESTree.ObjectLiteralElement | undefined) {
   if (
@@ -23,46 +19,46 @@ function countWarnInRules(rules: TSESTree.ObjectLiteralElement | undefined) {
       if (
         property.type === AST_NODE_TYPES.Property &&
         property.value.type === AST_NODE_TYPES.Literal &&
-        property.value.value === "warn"
+        property.value.value === 'warn'
       ) {
-        return true;
+        return true
       }
       if (
         property.type === AST_NODE_TYPES.Property &&
         property.value.type === AST_NODE_TYPES.ArrayExpression &&
         property.value.elements[0]?.type === AST_NODE_TYPES.Literal &&
-        property.value.elements[0]?.value === "warn"
+        property.value.elements[0]?.value === 'warn'
       ) {
-        return true;
+        return true
       }
 
-      return false;
-    }).length;
+      return false
+    }).length
 
-    return warnRulesCount;
+    return warnRulesCount
   }
 
-  return 0;
+  return 0
 }
 
-export const rule = createRule<Options, "maxWarnLevelRules">({
+export const rule = createRule<Options, 'maxWarnLevelRules'>({
   name,
   meta: {
-    type: "problem",
+    type: 'problem',
     docs: {
       description:
-        "Enforce a maximum number of warn level rules in .eslintrc.js",
+        'Enforce a maximum number of warn level rules in .eslintrc.js',
     },
     messages: {
       maxWarnLevelRules:
-        "Too many warn level rules ({{total}}). Max is {{max}}.",
+        'Too many warn level rules ({{total}}). Max is {{max}}.',
     },
     schema: [
       {
-        type: "object",
+        type: 'object',
         properties: {
           max: {
-            type: "integer",
+            type: 'integer',
             minimum: 0,
           },
         },
@@ -72,45 +68,45 @@ export const rule = createRule<Options, "maxWarnLevelRules">({
   },
   defaultOptions: [{ max: 0 }],
   create(context, [{ max }]) {
-    const currentFileName = getFilename(context);
+    const currentFileName = getFilename(context)
     if (
-      ![".eslintrc.js", ".eslintrc.cjs"].find((filename) =>
+      !['.eslintrc.js', '.eslintrc.cjs'].find((filename) =>
         currentFileName.includes(filename),
       )
     ) {
-      return {};
+      return {}
     }
 
-    let total = 0;
+    let total = 0
 
     return {
       ObjectExpression(node) {
-        const properties = node.properties;
+        const properties = node.properties
         const rules = properties.find((property) => {
           return (
             (property.type === AST_NODE_TYPES.Property &&
               property.key.type === AST_NODE_TYPES.Literal &&
-              property.key.value === "rules") ||
+              property.key.value === 'rules') ||
             (property.type === AST_NODE_TYPES.Property &&
               property.key.type === AST_NODE_TYPES.Identifier &&
-              property.key.name === "rules")
-          );
-        });
-        total += countWarnInRules(rules);
+              property.key.name === 'rules')
+          )
+        })
+        total += countWarnInRules(rules)
       },
 
-      "Program:exit"(node) {
+      'Program:exit'(node) {
         if (total > max) {
           context.report({
             node,
-            messageId: "maxWarnLevelRules",
+            messageId: 'maxWarnLevelRules',
             data: {
               total,
               max,
             },
-          });
+          })
         }
       },
-    };
+    }
   },
-});
+})

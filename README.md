@@ -16,8 +16,8 @@ Add `config-itself` to the plugins section of your `.eslintrc.js` configuration 
 
 ```js
 module.exports = {
-  plugins: ["config-itself"],
-};
+  plugins: ['config-itself'],
+}
 ```
 
 ## Supported rules
