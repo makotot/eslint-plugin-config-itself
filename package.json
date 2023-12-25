@@ -14,7 +14,12 @@
     "test": "vitest run",
     "prepare": "husky install",
     "prepack": "npm run build",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "keywords": [
     "eslint",
@@ -40,11 +45,13 @@
     "@typescript-eslint/types": "6.14.0",
     "eslint": "8.55.0",
     "eslint-doc-generator": "1.6.1",
+    "husky": "8.0.0",
+    "lint-staged": "^15.2.0",
+    "prettier": "3.1.1",
     "rimraf": "5.0.5",
     "semantic-release": "22.0.12",
     "typescript": "5.3.3",
-    "vitest": "1.0.4",
-    "husky": "8.0.0"
+    "vitest": "1.0.4"
   },
   "peerDependencies": {
     "eslint": "^8.0.0"

@@ -24,17 +24,17 @@ ruleTester.run(name, rule, {
     {
       filename: '.eslintrc.js',
       code: 'module.exports = { rules: { "no-undef": ["error"] } }',
-      options: [{max: 0}],
+      options: [{ max: 0 }],
     },
     {
       filename: '.eslintrc.js',
       code: 'module.exports = { rules: { "no-undef": ["warn"] } }',
-      options: [{max: 1}],
+      options: [{ max: 1 }],
     },
     {
       filename: '.eslintrc.js',
       code: 'module.exports = { rules: { "no-undef": ["warn"], "curly": ["warn"], "eqeqeq": ["warn"] } }',
-      options: [{max: 5}],
+      options: [{ max: 5 }],
     },
   ],
 
@@ -42,35 +42,35 @@ ruleTester.run(name, rule, {
     {
       filename: '.eslintrc.js',
       code: 'module.exports = { rules: { "no-undef": "warn" } }',
-      errors: [{messageId: 'maxWarnLevelRules'}],
+      errors: [{ messageId: 'maxWarnLevelRules' }],
     },
     {
       filename: '.eslintrc.cjs',
       code: 'module.exports = { rules: { "no-undef": "warn" } }',
-      errors: [{messageId: 'maxWarnLevelRules'}],
+      errors: [{ messageId: 'maxWarnLevelRules' }],
     },
     {
       filename: '.eslintrc.js',
       code: 'module.exports = { rules: { "no-undef": ["warn"] } }',
-      errors: [{messageId: 'maxWarnLevelRules'}],
+      errors: [{ messageId: 'maxWarnLevelRules' }],
     },
     {
       filename: '.eslintrc.js',
       code: 'module.exports = { rules: { "no-undef": ["warn"] } }',
-      options: [{max: 0}],
-      errors: [{messageId: 'maxWarnLevelRules'}],
+      options: [{ max: 0 }],
+      errors: [{ messageId: 'maxWarnLevelRules' }],
     },
     {
       filename: '.eslintrc.js',
       code: 'module.exports = { rules: { "no-undef": ["warn"], "curly": ["warn"] } }',
-      options: [{max: 1}],
-      errors: [{messageId: 'maxWarnLevelRules'}],
+      options: [{ max: 1 }],
+      errors: [{ messageId: 'maxWarnLevelRules' }],
     },
     {
       filename: '.eslintrc.js',
       code: 'module.exports = { rules: { "no-undef": ["warn"], "curly": ["warn"], "eqeqeq": ["warn"] } }',
-      options: [{max: 2}],
-      errors: [{messageId: 'maxWarnLevelRules'}],
+      options: [{ max: 2 }],
+      errors: [{ messageId: 'maxWarnLevelRules' }],
     },
 
     {
@@ -90,8 +90,8 @@ module.exports = {
   ]
 }
       `,
-      options: [{max: 0}],
-      errors: [{messageId: 'maxWarnLevelRules'}],
+      options: [{ max: 0 }],
+      errors: [{ messageId: 'maxWarnLevelRules' }],
     },
 
     {
@@ -112,8 +112,8 @@ module.exports = {
   ]
 }
       `,
-      options: [{max: 1}],
-      errors: [{messageId: 'maxWarnLevelRules'}],
+      options: [{ max: 1 }],
+      errors: [{ messageId: 'maxWarnLevelRules' }],
     },
   ],
 })
